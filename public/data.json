@@ -1,1 +1,146 @@
-[]
+[
+  {
+    "id": 1,
+    "category": "Health Fair",
+    "name": "Management of Diabetic Patients",
+    "image": "https://i.ibb.co/XLKNT6W/beca8691-aa35-4110-860c-b05c1e0d8093.jpg",
+    "price": 20,
+    "description": "Join us for an informative session on managing diabetes effectively. Learn about diet, exercise, and medication strategies to control your blood sugar levels. Gain insights into living a healthy life with diabetes. Explore the importance of regular check-ups and monitoring your glucose levels. Connect with experts who will provide personalized advice and answer your questions. Discover the latest advancements in diabetes treatment and technology. Network with others in the diabetes community and share your experiences. Receive free resources and materials to help you on your diabetes journey. Don't miss this opportunity to take control of your health.",
+    "buttonText": "Register Now"
+  },
+  {
+    "id": 2,
+    "category": "Health Seminar",
+    "name": "Treatment of Thyroid Diseases",
+    "image": "https://i.ibb.co/8MybZWC/b36cbf70-550d-45cd-b6ad-b611ca50885a.jpg",
+    "price": 15,
+    "description": "Explore the latest treatments and advancements in managing thyroid diseases. Our experts will discuss diagnosis, medication, and lifestyle changes. Learn how to maintain optimal thyroid health and improve your quality of life. Get practical tips for managing symptoms like fatigue and weight changes. Connect with others who have experienced thyroid issues and share your journey. Discover dietary strategies for thyroid support and overall well-being. Understand the importance of regular thyroid function tests and monitoring. Join us for a comprehensive seminar on thyroid health that will empower you with knowledge and confidence.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 3,
+    "category": "Medical Workshop",
+    "name": "Treatment of Eye Problems",
+    "image": "https://i.ibb.co/cJ2PwFH/fee526c4-3b2b-4071-aa7c-3d3b374c2210.jpg",
+    "price": 25,
+    "description": "Discover innovative approaches to treating common eye problems. From cataracts to vision correction, our experts have you covered. Gain insights into the latest surgical techniques and procedures for eye conditions. Learn about the importance of regular eye exams and early detection. Explore the world of eyewear and vision correction options. Connect with leading ophthalmologists and optometrists in the field. Get answers to your questions about eye health and vision care. Attend hands-on workshops and demonstrations. Join us for a comprehensive workshop on maintaining healthy eyes and clear vision.",
+    "buttonText": "Join Workshop"
+  },
+  {
+    "id": 4,
+    "category": "Health Fair",
+    "name": "Child Health and Wellbeing",
+    "image": "https://i.ibb.co/SnWGgvL/3047cb97-8b00-4e02-b075-b90a109bcdc0.jpg",
+    "price": 10,
+    "description": "Learn about the essentials of child health and wellbeing. Topics include nutrition, vaccinations, and early childhood development. Discover the importance of providing a nurturing environment for your child's growth. Connect with pediatricians and child development experts. Get insights into age-appropriate activities and milestones. Understand the role of vaccinations in protecting your child from diseases. Join us for a day of learning and support for your child's health and wellbeing.",
+    "buttonText": "Register Now"
+  },
+  {
+    "id": 5,
+    "category": "Fitness Seminar",
+    "name": "Seminar on Good Physical Health",
+    "image": "https://i.ibb.co/dQGF4zv/45db34c9-f514-4cc9-9c6c-0677ab06d6c2.jpg",
+    "price": 5,
+    "description": "Join our seminar on achieving and maintaining good physical health. Topics include exercise routines, nutrition, and mental wellness. Learn about the benefits of regular physical activity for your overall well-being. Get tips on creating a balanced diet that fuels your body. Discover techniques for managing stress and promoting mental health. Connect with fitness trainers and wellness experts. Participate in interactive sessions and workshops. Join us on the journey to a healthier you.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 6,
+    "category": "Health Fair",
+    "name": "Managing High Blood Pressure",
+    "image": "https://i.ibb.co/nPTk1L9/1d2b28ed-9df8-404f-8e45-0a5f82eefa5e.jpg",
+    "price": 20,
+    "description": "Discover strategies to control high blood pressure through diet, exercise, and stress management. Improve your heart health today. Learn about the impact of hypertension on your cardiovascular system. Explore dietary choices that can help lower blood pressure. Get insights into effective stress reduction techniques. Connect with cardiologists and hypertension specialists. Access free blood pressure screenings and monitoring. Take a step towards a healthier heart by joining our health fair.",
+    "buttonText": "Register Now"
+  },
+  {
+    "id": 7,
+    "category": "Health Seminar",
+    "name": "Seminar on Obesity Control",
+    "image": "https://i.ibb.co/BCR50ZF/5cce975e-c214-4470-8c5e-7abee1c77c72.jpg",
+    "price": 10,
+    "description": "Learn about effective ways to combat obesity and its health risks. Our experts will guide you towards a healthier lifestyle. Explore the factors contributing to obesity and its impact on health. Get practical tips for healthy eating and portion control. Connect with fitness trainers and nutritionists. Understand the importance of regular physical activity in obesity management. Join us for an informative seminar that can help you take control of your weight and well-being.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 8,
+    "category": "Medical Workshop",
+    "name": "Managing Cardiac Diseases",
+    "image": "https://i.ibb.co/RYvKZcQ/16baccc4-fa6b-47b6-85b2-78e36e3b6365.jpg",
+    "price": 30,
+    "description": "Explore the management of cardiac diseases and how to control risk factors. Get insights from cardiologists and experts in the field. Learn about the different types of cardiac diseases and their symptoms. Discover lifestyle changes that can improve heart health. Connect with healthcare professionals for personalized advice. Get information on cardiac medications and treatments. Participate in interactive workshops on heart-healthy living. Join us for a workshop that can potentially save lives.",
+    "buttonText": "Join Workshop"
+  },
+  {
+    "id": 9,
+    "category": "Health Seminar",
+    "name": "Vaccinations and Immunizations Awareness",
+    "image": "https://i.ibb.co/stgYQTp/4994e1c5-1800-4e1a-a81d-b9310ea2a76a.jpg",
+    "price": 5,
+    "description": "Increase your awareness about the importance of vaccinations and immunizations. Protect yourself and your community. Learn about the role of vaccinations in preventing infectious diseases. Understand the science behind vaccines and their safety. Connect with healthcare professionals who administer vaccinations. Get answers to common questions and concerns about immunizations. Join us in promoting public health through vaccination awareness.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 10,
+    "category": "Health Seminar",
+    "name": "Cancer Awareness Seminar",
+    "image": "https://i.ibb.co/stgYQTp/4994e1c5-1800-4e1a-a81d-b9310ea2a76a.jpg",
+    "price": 5,
+    "description": "Join us for a seminar on raising awareness about cancer. Learn about prevention, early detection, and support for cancer patients. Understand the importance of regular cancer screenings. Get information on lifestyle choices that can reduce cancer risks. Connect with cancer survivors and support organizations. Gain insights into the latest cancer treatments and research. Join our mission to spread awareness and save lives.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 11,
+    "category": "Health Fair",
+    "name": "Managing Infectious Diseases",
+    "image": "https://i.ibb.co/wNQyxRB/648d3591-0201-4f62-92d1-d2cabadb2808.jpg",
+    "price": 15,
+    "description": "Explore strategies for managing infectious diseases, with a focus on tuberculosis. Get expert guidance and insights. Learn about the transmission and prevention of infectious diseases. Understand the importance of early diagnosis and treatment. Connect with infectious disease specialists and public health experts. Get information on vaccinations and preventive measures. Join us in the fight against infectious diseases and help protect your community.",
+    "buttonText": "Register Now"
+  },
+  {
+    "id": 12,
+    "category": "Health Seminar",
+    "name": "Dermatological Problems Awareness",
+    "image": "https://i.ibb.co/Xtp3GWN/e5c9ebb3-db53-41c7-8715-1ec68e21eeef.jpg",
+    "price": 10,
+    "description": "Increase your awareness about common dermatological problems and skin care. Our dermatologists will provide valuable insights. Learn about skin conditions like acne, eczema, and psoriasis. Get tips on daily skincare routines and protection from UV radiation. Connect with dermatologists and skincare experts. Discover the latest advancements in dermatological treatments. Join us for a seminar that will help you maintain healthy and radiant skin.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 13,
+    "category": "Health Seminar",
+    "name": "Mental Health and Well-being",
+    "image": "https://i.ibb.co/x2DzCst/259ea8ec-c4d6-4f5a-8641-076f58830ddb.jpg",
+    "price": 10,
+    "description": "Join us for a seminar on mental health and well-being. Learn about the importance of mental wellness in our daily lives. Discover strategies for managing stress, anxiety, and depression. Connect with mental health professionals and counselors. Explore mindfulness and relaxation techniques. Share your experiences and insights in a supportive community. Break the stigma surrounding mental health. Together, we can foster a culture of understanding and support.",
+    "buttonText": "Book Seminar"
+  },
+  {
+    "id": 14,
+    "category": "Fitness Workshop",
+    "name": "High-Intensity Interval Training",
+    "image": "https://i.ibb.co/pwcwXkq/bfa62e69-00c9-4dad-bc0c-c7ea2c7d91dd.jpg",
+    "price": 15,
+    "description": "Experience the benefits of high-intensity interval training (HIIT) in our interactive workshop. Discover the science behind HIIT and its effectiveness in burning calories. Learn various HIIT exercises and techniques to boost your fitness levels. Get personalized guidance from certified trainers. Understand how HIIT can improve cardiovascular health and endurance. Join us for a high-energy workshop that will challenge and motivate you to reach your fitness goals.",
+    "buttonText": "Join Workshop"
+  },
+  {
+    "id": 15,
+    "category": "Yoga Workshop",
+    "name": "Yoga for Stress Relief",
+    "image": "https://i.ibb.co/qyQ5j4J/6cef17e5-b9e4-4595-a66c-be5c114a732f.jpg",
+    "price": 15,
+    "description": "Experience the benefits of yoga for stress relief in our interactive workshop. Learn yoga poses and breathing techniques to calm your mind and body. Understand the science behind stress and its impact on health. Connect with experienced yoga instructors who will guide you towards inner peace. Discover mindfulness practices to integrate into your daily life. Join us for a transformative workshop and start your journey towards a stress-free life.",
+    "buttonText": "Join Workshop"
+  },
+  {
+    "id": 16,
+    "category": "Health Seminar",
+    "name": "Holistic Nutrition and Wellness",
+    "image": "https://i.ibb.co/9bKQKDg/af83d078-9090-4b86-a09f-aa6cfd4583d2.jpg",
+    "price": 20,
+    "description": "Discover the power of holistic nutrition in promoting overall wellness. Learn about the connection between food, health, and vitality. Explore whole-food, plant-based diets and their benefits. Get insights into mindful eating and its impact on digestion. Connect with nutritionists and holistic wellness experts. Gain practical tips for creating balanced, nourishing meals. Join us on a journey towards a healthier and more vibrant you.",
+    "buttonText": "Book Seminar"
+  }
+]
