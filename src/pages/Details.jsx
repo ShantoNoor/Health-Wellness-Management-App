@@ -45,33 +45,42 @@ const Details = () => {
   return (
     <>
       {data ? (
-        <div className="mt-20">
-          <div className="rounded-lg overflow-hidden relative">
-            <img
-              className="w-full object-cover"
-              src={data.picture3}
-              alt={`Picture of ${data.title}`}
-            />
-            <div
-              className="absolute bottom-0 p-5 md:p-9 w-full flex items-center"
-              style={{ background: "rgba(11, 11, 11, 0.5)" }}
-            >
+        <>
+          <div className="mt-5 flex flex-col lg:flex-row gap-5 items-center">
+            <div className="w-full lg:w-1/2 rounded-lg overflow-hidden relative">
+              <img
+                className="w-full object-cover"
+                src={data.image}
+                alt={`Picture of ${data.name}`}
+              />
+              <div
+                className="absolute bottom-0 p-5 md:p-9 w-full flex items-center justify-between"
+                style={{ background: "rgba(11, 11, 11, 0.5)" }}
+              >
+                <div className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 rounded  bg-red-600">
+                  Price ${data.price}
+                </div>
+                <div className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 rounded  bg-green-600">
+                  {data.category}
+                </div>
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col justify-between">
+              <div>
+                <h1 className="text-4xl font-bold text-black mb-6">
+                  {data.name}
+                </h1>
+                <p className="text-black leading-[30px] text-justify">{data.description}</p>
+              </div>
               <button
-                className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 rounded hover:-translate-y-2 duration-300 cursor-pointer active:-translate-y-1"
-                style={{
-                  backgroundColor: data.text_button_bg_color,
-                }}
+                className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 mt-6 rounded hover:-translate-y-2 duration-300 cursor-pointer active:-translate-y-1 bg-blue-600"
                 onClick={() => handleClick(data.id)}
               >
-                Donate ${data.price}
+                {data.buttonText}
               </button>
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-black1 mt-14 mb-6">
-            {data.title}
-          </h1>
-          <p className="text-black117 leading-[30px]">{data.description}</p>
-        </div>
+        </>
       ) : (
         <Spinner></Spinner>
       )}

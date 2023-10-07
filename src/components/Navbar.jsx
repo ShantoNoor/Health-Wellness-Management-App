@@ -53,7 +53,7 @@ const Navbar = () => {
             isPending
               ? "pending"
               : isActive
-              ? "active underline text-red-600 font-bold"
+              ? "active font-bold !text-white !bg-red-500"
               : ""
           }
           to={link.to}
@@ -65,7 +65,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 rounded-lg p-4">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
