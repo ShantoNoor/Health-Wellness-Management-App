@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const TopTenEvents = ({ data }) => {
+  const navigate = useNavigate();
   const [topTenData, setTopFiveData] = useState(data);
   useEffect(() => {
     const top = data.sort(() => Math.random() - 0.5).slice(0, 10);
@@ -10,14 +12,22 @@ const TopTenEvents = ({ data }) => {
     <>
       <ul className="menu rounded-box bg-white text-center">
         <li className="bg-transparent p-2 text-center text-blue-500 font-semibold text-xl">
-         Top Ten Events
+          Top Ten Events
         </li>
         {topTenData.map((top, idx) => {
           return (
             <div key={idx}>
               <hr />
               <li className="bg-transparent p-2">
-                <button>{top.name}</button>
+                <button
+                  onClick={() =>
+                    navigate("/details/" + top.id, {
+                      state: { title: top.name },
+                    })
+                  }
+                >
+                  {top.name}
+                </button>
               </li>
             </div>
           );
