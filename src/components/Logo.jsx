@@ -16,7 +16,7 @@ const Logo = () => {
         />
         <h1 className="font-bold lg:flex flex-col hidden">
           <span className="text-red-500">Health & Wellness</span>
-          <span className="text-blue-500">Management</span>
+          <span className="text-blue-500">Management App</span>
         </h1>
       </div>
     </Link>

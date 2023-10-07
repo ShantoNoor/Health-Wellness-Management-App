@@ -5,6 +5,7 @@ import { FaDollarSign } from "react-icons/fa";
 import SignInWithOthers from "../components/SignInWithOthers";
 import TopTenEvents from "../components/TopTenEvents";
 import Slider from "../components/Slider";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const data = useGetData();
@@ -74,6 +75,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

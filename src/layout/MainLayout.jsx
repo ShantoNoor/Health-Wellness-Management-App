@@ -12,7 +12,10 @@ const MainLayout = () => {
       document.title = "Health & Wellness Management";
     } else {
       document.title =
-        pathname.slice(1, -1).toUpperCase() + " | Health & Wellness Management";
+        (pathname[pathname.length-1] === "/"
+          ? pathname.slice(1, -1).toUpperCase()
+          : pathname.slice(1).toUpperCase()) +
+        " | Health & Wellness Management";
     }
 
     if (state) document.title = state.title + " | Health & Wellness Management";
