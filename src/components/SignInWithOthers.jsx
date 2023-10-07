@@ -1,7 +1,7 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 const SignInWithOthers = () => {
   return (
-    <ul className="menu rounded-box bg-white text-center">
+    <ul className="menu rounded-box bg-white">
       <li className="bg-transparent">
         <button>
           <FaGoogle />

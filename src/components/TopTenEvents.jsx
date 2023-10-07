@@ -10,7 +10,7 @@ const TopTenEvents = ({ data }) => {
   }, [data]);
   return (
     <>
-      <ul className="menu rounded-box bg-white text-center">
+      <ul className="menu rounded-lg bg-white text-center">
         <li className="bg-transparent p-2 text-center text-blue-500 font-semibold text-xl">
           Top Ten Events
         </li>

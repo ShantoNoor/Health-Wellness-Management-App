@@ -8,12 +8,10 @@ const Slider = () => {
   ];
 
   return (
-    <div className="carousel rounded-box">
+    <div className="carousel rounded-lg">
       {images.map((img, idx) => (
         <div key={idx} className="carousel-item w-[30%]">
-          <img
-            src={img}
-          />
+          <img src={img} />
         </div>
       ))}
     </div>

@@ -5,7 +5,6 @@ import { FaDollarSign } from "react-icons/fa";
 import SignInWithOthers from "../components/SignInWithOthers";
 import TopTenEvents from "../components/TopTenEvents";
 import Slider from "../components/Slider";
-import Footer from "../components/Footer";
 
 const Home = () => {
   const data = useGetData();
@@ -21,7 +20,7 @@ const Home = () => {
           {data?.map((item) => (
             <div
               key={item.id}
-              className="rounded-xl p-4 bg-white duration-300 hover:shadow-xl active:shadow-lg flex flex-col justify-between"
+              className="rounded-lg p-4 bg-white duration-300 hover:shadow-xl active:shadow-lg flex flex-col justify-between"
             >
               <div className="relative">
                 <div className="badge absolute top-2 right-2 bg-blue-400 text-white opacity-90 p-3">
@@ -75,7 +74,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

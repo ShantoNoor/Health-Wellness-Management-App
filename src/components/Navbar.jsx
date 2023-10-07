@@ -15,22 +15,22 @@ const Navbar = () => {
   const unProtectedLinks = [
     {
       text: "Sign In",
-      to: "sign-in/",
+      to: "/sign-in",
     },
     {
       text: "Sign Up",
-      to: "sign-up/",
+      to: "/sign-up",
     },
   ];
 
   const protectedLinks = [
     {
       text: "My Activity",
-      to: "my-activity/",
+      to: "/my-activity",
     },
     {
       text: "My Profile",
-      to: "my-profile/",
+      to: "/my-profile",
     },
   ];
 
@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-lg w-52"
           >
             <Navlinks />
           </ul>

@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { useEffect } from "react";
 import { Suspense } from "react";
 import Spinner from "../components/Spinner";
+import Footer from "../components/Footer";
 
 const MainLayout = () => {
   const { pathname, state } = useLocation();
@@ -28,6 +29,7 @@ const MainLayout = () => {
         <Suspense fallback={<Spinner></Spinner>}>
           <Outlet></Outlet>
         </Suspense>
+        <Footer />
       </div>
     </div>
   );

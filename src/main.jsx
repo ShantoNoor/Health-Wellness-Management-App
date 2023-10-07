@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import MainLayout from "./layout/MainLayout";
 import { lazy } from "react";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 const Home = lazy(() => import("./pages/Home"));
 const Details = lazy(() => import("./pages/Details"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
@@ -24,11 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/sign-up",
-        element: <Home></Home>,
+        element: <SignUp />,
       },
       {
         path: "/sign-in",
-        element: <Home></Home>,
+        element: <SignIn />,
       },
       {
         path: "/sign-out",
