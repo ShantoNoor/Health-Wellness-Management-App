@@ -38,10 +38,11 @@ const SignIn = () => {
               />
             </div>
             <div className="form-control">
-              <label className="label">
+              <label for="password" className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
+                id="password"
                 type="password"
                 name="password"
                 placeholder="password"
@@ -54,7 +55,10 @@ const SignIn = () => {
             </div>
           </form>
           <p className="text-center">
-            Don't have a account, <Link className="text-blue-500" to="/sign-up">Sign Up!</Link>
+            Don't have a account,{" "}
+            <Link className="text-blue-500" to="/sign-up">
+              Sign Up!
+            </Link>
           </p>
           <div className="mx-auto mt-2">
             <SignInWithOthers />

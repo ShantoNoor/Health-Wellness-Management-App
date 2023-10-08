@@ -10,12 +10,13 @@ const Details = () => {
   const { id } = useParams();
   const [data] = useGetData(parseInt(id));
 
-  const handleClick = (id) => {
-    const donate_list = getValueFromLocalStorage("donate_list");
+  const handleClick = (id, text) => {
+    const activity_list = getValueFromLocalStorage("activity_list");
+    text = text.split(' ')[0]
 
-    if (donate_list.find((d_id) => d_id === id)) {
-      toast.success("Already Donated! 😇", {
-        position: "top-center",
+    if (activity_list.find((d_id) => d_id === id)) {
+      toast.success(`Already ${text}ed!`, {
+        position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -27,11 +28,11 @@ const Details = () => {
       return;
     }
 
-    donate_list.push(id);
-    setValueInLocalStorage(donate_list, "donate_list");
+    activity_list.push(id);
+    setValueInLocalStorage(activity_list, "activity_list");
 
-    toast.success("Donate Successful! 😇", {
-      position: "top-center",
+    toast.success(`Successfully ${text}ed!`, {
+      position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -49,6 +50,7 @@ const Details = () => {
           <div className="mt-5 flex flex-col lg:flex-row gap-5 items-center">
             <div className="w-full lg:w-1/2 rounded-lg overflow-hidden relative">
               <img
+                loading={"lazy"}
                 className="w-full object-cover"
                 src={data.image}
                 alt={`Picture of ${data.name}`}
@@ -70,11 +72,13 @@ const Details = () => {
                 <h1 className="text-4xl font-bold text-black mb-6">
                   {data.name}
                 </h1>
-                <p className="text-black leading-[30px] text-justify">{data.description}</p>
+                <p className="text-black leading-[30px] text-justify">
+                  {data.description}
+                </p>
               </div>
               <button
-                className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 mt-6 rounded hover:-translate-y-2 duration-300 cursor-pointer active:-translate-y-1 bg-blue-600"
-                onClick={() => handleClick(data.id)}
+                className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 mt-6 rounded hover:-translate-y-2 duration-300 cursor-pointer active:-translate-y-1 bg-blue-600 hover:shadow-lg active:shadow-md"
+                onClick={() => handleClick(data.id, data.buttonText)}
               >
                 {data.buttonText}
               </button>

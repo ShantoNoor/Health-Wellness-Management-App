@@ -9,6 +9,7 @@ const Logo = () => {
     >
       <div className="flex gap-4 items-center">
         <img
+          loading={"lazy"}
           src={logo}
           style={{ height: "40px" }}
           alt="Health and Wellness Logo"

@@ -11,7 +11,7 @@ const Slider = () => {
     <div className="carousel rounded-lg">
       {images.map((img, idx) => (
         <div key={idx} className="carousel-item w-[30%]">
-          <img src={img} />
+          <img loading={"lazy"} src={img} />
         </div>
       ))}
     </div>

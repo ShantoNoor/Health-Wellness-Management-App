@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const TopTenEvents = ({ data }) => {
   const navigate = useNavigate();
-  const [topTenData, setTopFiveData] = useState(data);
+  const [topTenData, setTopFiveData] = useState([]);
   useEffect(() => {
     const top = data.sort(() => Math.random() - 0.5).slice(0, 10);
     setTopFiveData(top);

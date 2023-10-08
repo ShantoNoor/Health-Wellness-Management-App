@@ -12,7 +12,7 @@ const Avater = ({ protectedLinks }) => {
     <div className="dropdown dropdown-end">
       <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="/logo.png" />
+          <img loading={"lazy"} src="/logo.png" />
         </div>
       </div>
       <ul

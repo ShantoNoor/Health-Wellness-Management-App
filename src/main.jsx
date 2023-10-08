@@ -6,6 +6,7 @@ import MainLayout from "./layout/MainLayout";
 import { lazy } from "react";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+const Activity = lazy(() => import("./pages/Activity"));
 const Home = lazy(() => import("./pages/Home"));
 const Details = lazy(() => import("./pages/Details"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-activity",
-        element: <Home></Home>,
+        element: <Activity></Activity>,
       },
       {
         path: "/my-profile",

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -52,6 +53,8 @@ const Footer = () => {
           </Link>
         </div>
       </nav>
+      <Logo />
+
       <aside>
         <p>
           Copyright © 2023 - All right reserved by Health & Wellness Management
