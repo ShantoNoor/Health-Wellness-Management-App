@@ -14,12 +14,12 @@ const Navbar = () => {
 
   const commonLinks = [
     {
-      text: "Contanct Us",
-      to: "/contact-us",
-    },
-    {
       text: "About Us",
       to: "/about-us",
+    },
+    {
+      text: "Contanct Us",
+      to: "/contact-us",
     },
   ];
 

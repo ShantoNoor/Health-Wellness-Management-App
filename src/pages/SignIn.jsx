@@ -50,7 +50,8 @@ const SignIn = () => {
               Sign Up!
             </Link>
           </p>
-          <div className="mx-auto mt-2">
+          <div className="divider">OR</div>
+          <div className="mx-auto mb-5">
             <SignInWithOthers />
           </div>
         </div>

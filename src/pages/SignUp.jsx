@@ -12,7 +12,7 @@ const SignUp = () => {
     <div className="hero bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Sign In Now!</h1>
+          <h1 className="text-5xl font-bold">Sign Up Now!</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit} className="card-body">
@@ -62,7 +62,8 @@ const SignUp = () => {
               Sign In!
             </Link>
           </p>
-          <div className="mx-auto mt-2">
+          <div className="divider">OR</div>
+          <div className="mx-auto mb-5">
             <SignInWithOthers />
           </div>
         </div>
