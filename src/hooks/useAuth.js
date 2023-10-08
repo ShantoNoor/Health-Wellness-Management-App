@@ -1,5 +1,5 @@
 const useAuth = () => {
-  const user = true;
+  const user = false;
   return { user };
 };
 
