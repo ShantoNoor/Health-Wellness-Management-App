@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   signOut as _signOut,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const auth = getAuth(app);
 export const AuthContex = createContext(null);
@@ -24,28 +25,29 @@ const AuthProvider = ({ children }) => {
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-  const popUpSignIn = async (provider) => {
+  const popUpSignIn = (provider) => {
     signInWithPopup(auth, provider)
       .then((res) => {
-        console.log(res.user);
+        toast.success("Sign In Successfull!");
       })
       .catch((err) => {
-        console.error(err);
+        toast.error("Failed To Sign In")
+        toast.error(err.code);
       });
   };
   const signOut = () =>
     _signOut(auth)
       .then(() => {
-        console.log("Sign-Out successfull!");
+        toast.success("Sign Out successfull!");
         return true;
       })
       .catch((err) => {
-        console.error(err);
+        toast.error(err.code);
         return false;
       });
 
-  const googlePopUp = async () => popUpSignIn(googleProvider);
-  const githubPopUp = async () => popUpSignIn(githubProvider);
+  const googlePopUp = () => popUpSignIn(googleProvider);
+  const githubPopUp = () => popUpSignIn(githubProvider);
 
   return (
     <AuthContex.Provider value={{ googlePopUp, githubPopUp, user, signOut }}>

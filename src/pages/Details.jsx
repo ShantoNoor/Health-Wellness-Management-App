@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useGetData from "../hooks/useGetData";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import setValueInLocalStorage from "../utility/setValueInLocalStorage";
 import getValueFromLocalStorage from "../utility/getValueFromLocalStorage";
 import Spinner from "../components/Spinner";
@@ -15,32 +14,13 @@ const Details = () => {
     text = text.split(' ')[0]
 
     if (activity_list.find((d_id) => d_id === id)) {
-      toast.success(`Already ${text}ed!`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.success(`Already ${text}ed!`);
       return;
     }
 
     activity_list.push(id);
     setValueInLocalStorage(activity_list, "activity_list");
-
-    toast.success(`Successfully ${text}ed!`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      progress: undefined,
-      theme: "light",
-    });
+    toast.success(`Successfully ${text}ed!`);
   };
 
   return (
@@ -88,7 +68,6 @@ const Details = () => {
       ) : (
         <Spinner></Spinner>
       )}
-      <ToastContainer></ToastContainer>
     </>
   );
 };
