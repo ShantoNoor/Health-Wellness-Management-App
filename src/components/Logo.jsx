@@ -13,7 +13,6 @@ const Logo = () => {
           src={logo}
           style={{ height: "40px" }}
           alt="Health and Wellness Logo"
-          loading="lazy"
         />
         <h1 className="font-bold lg:flex flex-col hidden">
           <span className="text-red-500">Health & Wellness</span>

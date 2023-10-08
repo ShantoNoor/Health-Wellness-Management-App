@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaDollarSign } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Cards = ({ data, lg, disabled, len }) => {
   const navigate = useNavigate();
-  const [showLength, setShowLength] = useState(len);
+    const [showLength, setShowLength] = useState(len);
+    // useEffect(()=>{},[lg])
 
   return (
     <>
       <div
-        className={`w-full grid grid-cols-1 md:grid-cols-2 lg:${
-          "grid-cols-" + lg
+        className={`w-full grid grid-cols-1 md:grid-cols-2 ${
+          lg > 3 ? "lg:grid-cols-4" : "lg:grid-cols-3"
         } gap-6 justify-items-center`}
       >
         {data?.slice(0, showLength).map((item) => (

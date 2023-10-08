@@ -4,16 +4,16 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center p-10  text-base-content rounded-lg mt-6">
       <nav className="grid grid-flow-col gap-4">
         <Link to="/" className="link link-hover">
           Home
         </Link>
-        <Link to="/sign-in" className="link link-hover">
-          Sign In
+        <Link to="/contact-us" className="link link-hover">
+          Contact Us
         </Link>
-        <Link to="/sign-up" className="link link-hover">
-          Sign Up
+        <Link to="/about-us" className="link link-hover">
+          About Us
         </Link>
       </nav>
       <nav>

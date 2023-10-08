@@ -12,6 +12,17 @@ const Navbar = () => {
     },
   ];
 
+  const commonLinks = [
+    {
+      text: "Contanct Us",
+      to: "/contact-us",
+    },
+    {
+      text: "About Us",
+      to: "/about-us",
+    },
+  ];
+
   const unProtectedLinks = [
     {
       text: "Sign In",
@@ -39,9 +50,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (user) {
-      setNavlinks([...links, ...protectedLinks]);
+      setNavlinks([...links, ...protectedLinks, ...commonLinks]);
     } else {
-      setNavlinks([...links, ...unProtectedLinks]);
+      setNavlinks([...links, ...commonLinks, ...unProtectedLinks]);
     }
   }, []);
 
