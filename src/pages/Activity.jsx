@@ -1,15 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import useGetData from "../hooks/useGetData";
-import getValueFromLocalStorage from "../utility/getValueFromLocalStorage";
 import { useState } from "react";
 import Cards from "../components/Cards";
+import useGetActivity from "../hooks/useGetActivity";
 
 const Activity = () => {
-  const localData = getValueFromLocalStorage("activity_list");
-  const data = useGetData();
-  const activity_list = data.filter((item) => localData.includes(item.id));
   const navigate = useNavigate();
   const [showLength, setShowLength] = useState(4);
+  const activity_list = useGetActivity();
 
   return activity_list.length > 0 ? (
     <div className="mt-6">

@@ -3,9 +3,12 @@ import SignInWithOthers from "../components/SignInWithOthers";
 import TopTenEvents from "../components/TopTenEvents";
 import Slider from "../components/Slider";
 import Cards from "../components/Cards";
+import useAuth from "../hooks/useAuth";
+import RecentActivity from "../components/RecentActivity";
 
 const Home = () => {
   const data = useGetData();
+  const { user } = useAuth();
   return (
     <>
       <div className="mt-6 hidden md:block">
@@ -16,9 +19,9 @@ const Home = () => {
           <Cards data={data} lg={3} disabled={false} len={6} />
         </div>
         <div className="w-full lg:w-1/4 flex flex-col gap-6">
-          <SignInWithOthers></SignInWithOthers>
+          {user ? <RecentActivity /> : <SignInWithOthers />}
           <div className="hidden lg:block">
-            <TopTenEvents data={data}></TopTenEvents>
+            <TopTenEvents data={data} />
           </div>
         </div>
       </div>
