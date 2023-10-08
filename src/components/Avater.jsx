@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Avater = ({ protectedLinks }) => {
+  const { user } = useAuth();
+
   const links = [
     ...protectedLinks,
     {
@@ -12,7 +15,7 @@ const Avater = ({ protectedLinks }) => {
     <div className="dropdown dropdown-end">
       <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img loading={"lazy"} src="/logo.png" />
+          <img loading={"lazy"} src={user?.photoURL} />
         </div>
       </div>
       <ul

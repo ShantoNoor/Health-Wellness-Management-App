@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+import Spinner from "../components/Spinner";
+import useAuth from "../hooks/useAuth";
+import { Navigate } from "react-router-dom";
+
 const SignOut = () => {
-  return <div>SignOut</div>;
+  const { signOut } = useAuth();
+  if (signOut()) {
+    return <Navigate to="/" />;
+  } 
+  return <Spinner />;
 };
 
 export default SignOut;

@@ -104,14 +104,17 @@ const Navbar = () => {
         </div>
         <Logo />
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className={`${!user ? 'navbar-end' : 'navbar-center'} hidden lg:flex`}>
         <ul className="menu menu-horizontal px-1">
           <Navlinks />
         </ul>
       </div>
-      <div className="navbar-end">
-        <Avater protectedLinks={protectedLinks} />
-      </div>
+
+      {user && (
+        <div className="navbar-end">
+          <Avater protectedLinks={protectedLinks} />
+        </div>
+      )}
     </div>
   );
 };
