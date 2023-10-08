@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
+import useAuth from "../hooks/useAuth";
 
 const SignIn = () => {
+  const { signIn } = useAuth();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.email.value);
-    console.log(e.target.password.value);
+    signIn(e.target.email.value, e.target.password.value);
   };
   return (
     <div className="hero bg-base-200">

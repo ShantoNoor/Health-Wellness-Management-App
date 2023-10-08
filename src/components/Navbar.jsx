@@ -54,7 +54,7 @@ const Navbar = () => {
     } else {
       setNavlinks([...links, ...commonLinks, ...unProtectedLinks]);
     }
-  }, []);
+  }, [user]);
 
   const Navlinks = () => {
     return navlinks.map((link, idx) => (

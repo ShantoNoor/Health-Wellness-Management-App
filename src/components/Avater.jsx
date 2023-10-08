@@ -13,10 +13,18 @@ const Avater = ({ protectedLinks }) => {
   ];
   return (
     <div className="dropdown dropdown-end">
-      <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img loading={"lazy"} src={user?.photoURL} />
-        </div>
+      <div tabIndex={0} className="btn btn-ghost btn-circle avatar placeholder">
+        {user.photoURL ? (
+          <div className="w-10 rounded-full">
+            <img loading={"lazy"} src={user.photoURL} />
+          </div>
+        ) : (
+          <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
+            <span className="text-xl">
+              {user.displayName && user.displayName[0] || "#"}
+            </span>
+          </div>
+        )}
       </div>
       <ul
         tabIndex={0}

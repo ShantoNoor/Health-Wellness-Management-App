@@ -7,6 +7,9 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   signOut as _signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile as _updateProfile
 } from "firebase/auth";
 import { toast } from "react-toastify";
 
@@ -31,8 +34,8 @@ const AuthProvider = ({ children }) => {
         toast.success("Sign In Successfull!");
       })
       .catch((err) => {
-        toast.error("Failed To Sign In")
-        toast.error(err.code);
+        toast.error("Failed To Sign In");
+        toast.error(err.message);
       });
   };
   const signOut = () =>
@@ -42,15 +45,61 @@ const AuthProvider = ({ children }) => {
         return true;
       })
       .catch((err) => {
-        toast.error(err.code);
+        toast.error("Failed To Sign Out");
+        toast.error(err.message);
         return false;
+      });
+
+  const updateProfile = (name, photoURL) =>
+    _updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    })
+      .then(() => {
+        toast.success("Profile Update Successfull!");
+      })
+      .catch((err) => {
+        toast.error("Failed To Update Profile");
+        toast.error(err.message);
+        console.log(err.message)
+      });
+
+  const signUp = (name, email, password) =>
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        toast.success("Sign Up Successfull!");
+        updateProfile(name, "");
+      })
+      .catch((err) => {
+        toast.error("Failed To Sign Up");
+        toast.error(err.message);
+      });
+
+  const signIn = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        toast.success("Sign In Successfull!");
+      })
+      .catch((err) => {
+        toast.error("Failed To Sign In");
+        toast.error(err.message);
       });
 
   const googlePopUp = () => popUpSignIn(googleProvider);
   const githubPopUp = () => popUpSignIn(githubProvider);
 
   return (
-    <AuthContex.Provider value={{ googlePopUp, githubPopUp, user, signOut }}>
+    <AuthContex.Provider
+      value={{
+        googlePopUp,
+        githubPopUp,
+        user,
+        signOut,
+        signUp,
+        signIn,
+        updateProfile,
+      }}
+    >
       {children}
     </AuthContex.Provider>
   );
