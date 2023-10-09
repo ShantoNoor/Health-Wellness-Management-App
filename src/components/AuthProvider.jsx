@@ -18,7 +18,6 @@ export const AuthContex = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     onAuthStateChanged(auth, (signedUser) => {

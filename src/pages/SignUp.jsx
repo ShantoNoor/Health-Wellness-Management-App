@@ -2,12 +2,30 @@ import { Link } from "react-router-dom";
 import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 const SignUp = () => {
   const { signUp } = useAuth();
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    signUp(e.target.name.value, e.target.email.value, e.target.password.value);
+    setErrorMessage("");
+
+    const password = e.target.password.value;
+    if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 charecters!");
+      return;
+    } else if (/.*[A-Z].*/.test(password) == false) {
+      setErrorMessage("Password must contains at least one capital letter!");
+      return;
+    } else if (/.*[^A-Za-z0-9].*/.test(password) == false) {
+      setErrorMessage("Password must contains at least one special character!");
+      return;
+    }
+
+    signUp(e.target.name.value, e.target.email.value, password);
   };
   return (
     <div className="hero bg-base-200">
@@ -61,6 +79,7 @@ const SignUp = () => {
                 className="input input-bordered"
                 required
               />
+              {errorMessage && <p className="text-sm mt-2 text-center text-red-800">{errorMessage}</p>}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Sign Up</button>
