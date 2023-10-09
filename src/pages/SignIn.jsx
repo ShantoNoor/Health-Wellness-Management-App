@@ -12,6 +12,10 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(e.target.email.value, e.target.password.value);
+    if (state?.pathname)
+      navigate(state.pathname, {
+        state: { title: state.title },
+      });
   };
   return (
     <div className="hero bg-base-200">
@@ -59,7 +63,7 @@ const SignIn = () => {
           </form>
           <p className="text-center">
             Don't have a account,{" "}
-            <Link className="text-blue-500" to="/sign-up" state={state}>
+            <Link className="text-blue-500" to="/sign-up">
               Sign Up!
             </Link>
           </p>

@@ -29,6 +29,7 @@ const SignUp = () => {
     }
 
     signUp(e.target.name.value, e.target.email.value, password);
+    navigate("/");
   };
   return (
     <div className="hero bg-base-200">
@@ -94,7 +95,7 @@ const SignUp = () => {
           </form>
           <p className="text-center">
             Already have a account,{" "}
-            <Link className="text-blue-500" to="/sign-in" state={state}>
+            <Link className="text-blue-500" to="/sign-in">
               Sign In!
             </Link>
           </p>
