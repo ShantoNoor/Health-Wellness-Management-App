@@ -4,6 +4,7 @@ const AboutUs = () => {
   const navigate = useNavigate();
   return (
     <div
+      data-aos="flip-up"
       className="hero min-h-[80vh] mt-6 rounded-lg overflow-hidden"
       style={{
         backgroundImage:

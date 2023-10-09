@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 const ContanctUs = () => {
   return (
     <div
+      data-aos="flip-down"
       className="hero min-h-[80vh] mt-6 rounded-lg overflow-hidden"
       style={{
         backgroundImage:

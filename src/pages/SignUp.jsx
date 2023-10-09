@@ -32,7 +32,11 @@ const SignUp = () => {
     navigate("/");
   };
   return (
-    <div className="hero bg-base-200">
+    <div
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      className="hero bg-base-200"
+    >
       <div className="hero-content flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Sign Up Now!</h1>

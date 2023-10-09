@@ -24,7 +24,13 @@ const MyProfile = () => {
     updateProfile(e.target.name.value, e.target.photourl.value);
   };
   return (
-    <div className="hero bg-base-200">
+    <div
+      data-aos="fade-left"
+      data-aos-anchor="#example-anchor"
+      data-aos-offset="500"
+      data-aos-duration="500"
+      className="hero bg-base-200"
+    >
       <div className="hero-content flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">My Profile!</h1>

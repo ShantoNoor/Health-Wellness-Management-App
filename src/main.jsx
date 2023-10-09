@@ -7,6 +7,10 @@ import { lazy } from "react";
 import AuthProvider from "./components/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init({ duration: 750 });
 
 const PrivateRoute = lazy(() => import("./components/PrivateRoute"));
 const SignIn = lazy(() => import("./pages/SignIn"));

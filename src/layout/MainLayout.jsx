@@ -13,7 +13,7 @@ const MainLayout = () => {
       document.title = "Health & Wellness Management";
     } else {
       document.title =
-        (pathname[pathname.length-1] === "/"
+        (pathname[pathname.length - 1] === "/"
           ? pathname.slice(1, -1).toUpperCase()
           : pathname.slice(1).toUpperCase()) +
         " | Health & Wellness Management";
@@ -25,11 +25,17 @@ const MainLayout = () => {
   return (
     <div>
       <div className="container py-12 px-6">
-        <Navbar></Navbar>
-        <Suspense fallback={<Spinner></Spinner>}>
-          <Outlet></Outlet>
-        </Suspense>
-        <Footer />
+        <div data-aos="slide-down">
+          <Navbar />
+        </div>
+        <div>
+          <Suspense fallback={<Spinner></Spinner>}>
+            <Outlet></Outlet>
+          </Suspense>
+        </div>
+        <div data-aos="slide-up">
+          <Footer />
+        </div>
       </div>
     </div>
   );
