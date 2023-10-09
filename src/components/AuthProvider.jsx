@@ -9,7 +9,7 @@ import {
   signOut as _signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  updateProfile as _updateProfile
+  updateProfile as _updateProfile,
 } from "firebase/auth";
 import { toast } from "react-toastify";
 
@@ -17,17 +17,24 @@ const auth = getAuth(app);
 export const AuthContex = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (signedUser) => {
-      setUser(signedUser);
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
     });
+
+    return () => {
+      unSubscribe();
+    };
   }, []);
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const popUpSignIn = (provider) => {
+    setLoading(true);
     signInWithPopup(auth, provider)
       .then((res) => {
         toast.success("Sign In Successfull!");
@@ -37,7 +44,8 @@ const AuthProvider = ({ children }) => {
         toast.error(err.message);
       });
   };
-  const signOut = () =>
+  const signOut = () => {
+    setLoading(true);
     _signOut(auth)
       .then(() => {
         toast.success("Sign Out successfull!");
@@ -48,8 +56,10 @@ const AuthProvider = ({ children }) => {
         toast.error(err.message);
         return false;
       });
+  };
 
-  const updateProfile = (name, photoURL) =>
+  const updateProfile = (name, photoURL) => {
+    setLoading(true);
     _updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photoURL,
@@ -60,10 +70,11 @@ const AuthProvider = ({ children }) => {
       .catch((err) => {
         toast.error("Failed To Update Profile");
         toast.error(err.message);
-        console.log(err.message)
       });
+  };
 
-  const signUp = (name, email, password) =>
+  const signUp = (name, email, password) => {
+    setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Sign Up Successfull!");
@@ -73,8 +84,10 @@ const AuthProvider = ({ children }) => {
         toast.error("Failed To Sign Up");
         toast.error(err.message);
       });
+  }
 
-  const signIn = (email, password) =>
+  const signIn = (email, password) => {
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Sign In Successfull!");
@@ -83,9 +96,16 @@ const AuthProvider = ({ children }) => {
         toast.error("Failed To Sign In");
         toast.error(err.message);
       });
+  }
 
-  const googlePopUp = () => popUpSignIn(googleProvider);
-  const githubPopUp = () => popUpSignIn(githubProvider);
+  const googlePopUp = () => {
+    setLoading(true);
+    popUpSignIn(googleProvider);
+  }
+  const githubPopUp = () => {
+    setLoading(true);
+    popUpSignIn(githubProvider);
+  }
 
   return (
     <AuthContex.Provider
@@ -97,6 +117,7 @@ const AuthProvider = ({ children }) => {
         signUp,
         signIn,
         updateProfile,
+        loading,
       }}
     >
       {children}

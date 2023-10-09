@@ -7,8 +7,8 @@ import { lazy } from "react";
 import AuthProvider from "./components/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PrivateRoute from "./components/PrivateRoute";
 
+const PrivateRoute = lazy(() => import("./components/PrivateRoute"));
 const SignIn = lazy(() => import("./pages/SignIn"));
 const SignUp = lazy(() => import("./pages/SignUp"));
 const ContanctUs = lazy(() => import("./pages/ContanctUs"));
