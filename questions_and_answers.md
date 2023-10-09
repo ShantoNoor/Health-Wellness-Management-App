@@ -21,6 +21,7 @@ console.log(greetign);
 #### Answer: ?
 
 <i>Write your explanation here</i>
+
 Answer: A: {}, because here in the 2nd line a variable named greeting is created and assigned an empty object without any var, let, const keyword. Such variables have a global scope and called a global variable.
 </p>
 </details>
