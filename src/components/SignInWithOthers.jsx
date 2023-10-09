@@ -1,6 +1,7 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const SignInWithOthers = () => {
   const { googlePopUp, githubPopUp } = useAuth();
   const { state } = useLocation();
@@ -10,10 +11,20 @@ const SignInWithOthers = () => {
       <li className="bg-transparent">
         <button
           onClick={() => {
-            googlePopUp();
-            if (state?.pathname)
-              navigate(state.pathname, {
-                state: { title: state.title },
+            googlePopUp()
+              .then((res) => {
+                toast.success("Sign In Successfull!");
+                if (state?.pathname) {
+                  return navigate(state.pathname, {
+                    state: { title: state.title },
+                  });
+                } else {
+                  return navigate("/");
+                }
+              })
+              .catch((err) => {
+                toast.error("Failed To Sign In");
+                toast.error(err.message);
               });
           }}
         >
@@ -25,10 +36,20 @@ const SignInWithOthers = () => {
       <li className="bg-transparent">
         <button
           onClick={() => {
-            githubPopUp();
-            if (state?.pathname)
-              navigate(state.pathname, {
-                state: { title: state.title },
+            githubPopUp()
+              .then((res) => {
+                toast.success("Sign In Successfull!");
+                if (state?.pathname) {
+                  return navigate(state.pathname, {
+                    state: { title: state.title },
+                  });
+                } else {
+                  return navigate("/");
+                }
+              })
+              .catch((err) => {
+                toast.error("Failed To Sign In");
+                toast.error(err.message);
               });
           }}
         >

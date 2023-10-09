@@ -19,7 +19,7 @@ const Home = () => {
           <Cards data={data} lg={3} disabled={false} len={6} />
         </div>
         <div
-          data-aos="zoom-out-left"
+          data-aos="zoom-out-up"
           className="w-full lg:w-1/4 flex flex-col gap-6"
         >
           {user ? <RecentActivity /> : <SignInWithOthers />}

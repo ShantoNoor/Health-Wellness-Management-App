@@ -3,38 +3,60 @@ import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
 import animation from "../assets/animations/sign-in.json";
+import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 const SignIn = () => {
   const { signIn } = useAuth();
   const { state } = useLocation();
   const navigate = useNavigate();
 
+  const [swidth, setSwidth] = useState(500);
+  useEffect(() => {
+    setSwidth(window.innerWidth >= 400 ? 300 : 250);
+    const handleResize = () => {
+      setSwidth(window.innerWidth >= 400 ? 300 : 250);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    signIn(e.target.email.value, e.target.password.value);
-    if (state?.pathname)
-      navigate(state.pathname, {
-        state: { title: state.title },
+    signIn(e.target.email.value, e.target.password.value)
+      .then((userCredential) => {
+        toast.success("Sign In Successfull!");
+        if (state?.pathname) {
+          navigate(state.pathname, {
+            state: { title: state.title },
+          });
+        } else {
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        toast.error("Failed To Sign In");
+        toast.error(err.message);
       });
   };
   return (
-    <div
-      data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
-      className="hero bg-base-200"
-    >
-      <div className="hero-content flex-col gap-6 lg:flex-row-reverse">
+    <div data-aos="fade-up" className="hero bg-base-200 mt-6">
+      <div className="hero-content p-0 flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Sign In Now!</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold">Sign In Now!</h1>
           <Player
             autoplay
             loop
             src={animation}
-            style={{ height: "300px", width: "300px" }}
+            style={{ height: swidth, width: swidth }}
           ></Player>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleSubmit} className="card-body">
+          <form onSubmit={handleSubmit} className="card-body p-4">
             <div className="form-control">
               <label htmlFor="email" className="label">
                 <span className="label-text">Email</span>

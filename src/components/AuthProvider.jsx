@@ -35,14 +35,7 @@ const AuthProvider = ({ children }) => {
   const githubProvider = new GithubAuthProvider();
   const popUpSignIn = (provider) => {
     setLoading(true);
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        toast.success("Sign In Successfull!");
-      })
-      .catch((err) => {
-        toast.error("Failed To Sign In");
-        toast.error(err.message);
-      });
+    return signInWithPopup(auth, provider);
   };
   const signOut = () => {
     setLoading(true);
@@ -75,36 +68,21 @@ const AuthProvider = ({ children }) => {
 
   const signUp = (name, email, password) => {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        toast.success("Sign Up Successfull!");
-        updateProfile(name, "");
-      })
-      .catch((err) => {
-        toast.error("Failed To Sign Up");
-        toast.error(err.message);
-      });
+    return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signIn = (email, password) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        toast.success("Sign In Successfull!");
-      })
-      .catch((err) => {
-        toast.error("Failed To Sign In");
-        toast.error(err.message);
-      });
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const googlePopUp = () => {
     setLoading(true);
-    popUpSignIn(googleProvider);
+    return popUpSignIn(googleProvider);
   };
   const githubPopUp = () => {
     setLoading(true);
-    popUpSignIn(githubProvider);
+    return popUpSignIn(githubProvider);
   };
 
   return (

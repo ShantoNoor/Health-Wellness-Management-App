@@ -24,7 +24,7 @@ const Details = () => {
   };
 
   return (
-    <>
+    <div data-aos="slide-up">
       {data ? (
         <>
           <div className="mt-5 flex flex-col lg:flex-row gap-5 items-center">
@@ -68,7 +68,7 @@ const Details = () => {
       ) : (
         <Spinner></Spinner>
       )}
-    </>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ const ErrorPage = () => {
   const { status, statusText, data } = useRouteError();
 
   return (
-    <div>
+    <div data-aos="slide-down">
       <h3 className="mt-14 lg:mt-28 text-3xl md:text-5xl text-red1 text-center font-bold">
         ❌ {data} <br />
         <br />

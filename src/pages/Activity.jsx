@@ -10,9 +10,7 @@ const Activity = () => {
 
   return (
     <div
-      data-aos="fade-right"
-      data-aos-offset="300"
-      data-aos-easing="ease-in-sine"
+      data-aos="slide-up"
     >
       {activity_list.length > 0 ? (
         <div className="mt-6">

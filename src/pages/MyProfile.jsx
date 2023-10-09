@@ -25,15 +25,12 @@ const MyProfile = () => {
   };
   return (
     <div
-      data-aos="fade-left"
-      data-aos-anchor="#example-anchor"
-      data-aos-offset="500"
-      data-aos-duration="500"
-      className="hero bg-base-200"
+      data-aos="slide-up"
+      className="hero bg-base-200 mt-6"
     >
-      <div className="hero-content flex-col gap-6 lg:flex-row-reverse">
+      <div className="hero-content p-0 flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">My Profile!</h1>
+          <h1 className="text-3xl lg:text-5xl font-bold">My Profile!</h1>
           <Player
             autoplay
             loop
@@ -42,7 +39,7 @@ const MyProfile = () => {
           ></Player>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleSubmit} className="card-body">
+          <form onSubmit={handleSubmit} className="card-body p-4">
             <div className="form-control">
               <label htmlFor="name" className="label">
                 <span className="label-text">Name</span>
