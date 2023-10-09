@@ -39,10 +39,10 @@ const Details = () => {
                 className="absolute bottom-0 p-5 md:p-9 w-full flex items-center justify-between"
                 style={{ background: "rgba(11, 11, 11, 0.5)" }}
               >
-                <div className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 rounded  bg-red-600">
+                <div className="text-white text-sm md:text-xl font-semibold p-2 md:px-6 md:py-4 rounded  bg-red-600">
                   Price ${data.price}
                 </div>
-                <div className="text-white text-xl md:text-xl font-semibold p-3 md:px-6 md:py-4 rounded  bg-green-600">
+                <div className="text-white text-sm md:text-xl font-semibold p-2 md:px-6 md:py-4 rounded  bg-green-600">
                   {data.category}
                 </div>
               </div>

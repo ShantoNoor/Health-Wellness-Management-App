@@ -20,7 +20,9 @@ const Avater = ({ protectedLinks:links }) => {
         )}
       </div>
 
-      <div className="hidden lg:block text-base">{user.displayName}</div>
+      <div className="hidden lg:block text-base">
+        {user?.displayName && user.displayName.toUpperCase()}
+      </div>
 
       <ul
         tabIndex={0}
