@@ -43,6 +43,10 @@ const Navbar = () => {
       text: "My Profile",
       to: "/my-profile",
     },
+    {
+      text: "Sign Out",
+      to: "/sign-out",
+    },
   ];
 
   const { user } = useAuth();
@@ -50,7 +54,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (user) {
-      setNavlinks([...links, ...protectedLinks, ...commonLinks]);
+      setNavlinks([...links, ...commonLinks, ...protectedLinks,]);
     } else {
       setNavlinks([...links, ...commonLinks, ...unProtectedLinks]);
     }

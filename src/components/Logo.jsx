@@ -14,7 +14,7 @@ const Logo = () => {
           style={{ height: "40px" }}
           alt="Health and Wellness Logo"
         />
-        <h1 className="font-bold lg:flex flex-col hidden">
+        <h1 className="font-bold xl:flex flex-col hidden">
           <span className="text-red-500">Health & Wellness</span>
           <span className="text-blue-500">Management App</span>
         </h1>
