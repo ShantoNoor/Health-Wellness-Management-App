@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const Cards = ({ data, lg, disabled, len }) => {
   const navigate = useNavigate();
     const [showLength, setShowLength] = useState(len);
-    // useEffect(()=>{},[lg])
 
   return (
     <>

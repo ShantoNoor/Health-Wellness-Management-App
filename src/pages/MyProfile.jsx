@@ -4,6 +4,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
 import { toast } from "react-toastify";
 import { useEffect, useRef } from "react";
+import animation from "../assets/animations/update.json"
 
 const MyProfile = () => {
   const { user, updateProfile } = useAuth();
@@ -30,7 +31,7 @@ const MyProfile = () => {
           <Player
             autoplay
             loop
-            src="/update.json"
+            src={animation}
             style={{ height: "300px", width: "300px" }}
           ></Player>
         </div>

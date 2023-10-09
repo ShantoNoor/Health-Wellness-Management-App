@@ -21,7 +21,7 @@ const Avater = ({ protectedLinks }) => {
         ) : (
           <div className="bg-neutral-focus text-neutral-content rounded-full w-16">
             <span className="text-xl">
-              {user.displayName && user.displayName[0] || "#"}
+              {user.displayName && user.displayName[0].toUpperCase() || "#"}
             </span>
           </div>
         )}

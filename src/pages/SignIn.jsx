@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
+import animation from "../assets/animations/sign-in.json";
 
 const SignIn = () => {
   const { signIn } = useAuth();
+  const { state } = useLocation();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(e.target.email.value, e.target.password.value);
@@ -17,7 +21,7 @@ const SignIn = () => {
           <Player
             autoplay
             loop
-            src="/sign-in.json"
+            src={animation}
             style={{ height: "300px", width: "300px" }}
           ></Player>
         </div>
@@ -55,7 +59,7 @@ const SignIn = () => {
           </form>
           <p className="text-center">
             Don't have a account,{" "}
-            <Link className="text-blue-500" to="/sign-up">
+            <Link className="text-blue-500" to="/sign-up" state={state}>
               Sign Up!
             </Link>
           </p>

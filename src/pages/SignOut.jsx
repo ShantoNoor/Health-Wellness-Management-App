@@ -5,10 +5,10 @@ import { Navigate } from "react-router-dom";
 
 const SignOut = () => {
   const { signOut } = useAuth();
-  if (signOut()) {
-    return <Navigate to="/" />;
-  } 
-  return <Spinner />;
+  useEffect(() => {
+    signOut();
+  }, []);
+  return <Navigate to="/" />;
 };
 
 export default SignOut;

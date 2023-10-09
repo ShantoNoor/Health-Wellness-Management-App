@@ -84,7 +84,7 @@ const AuthProvider = ({ children }) => {
         toast.error("Failed To Sign Up");
         toast.error(err.message);
       });
-  }
+  };
 
   const signIn = (email, password) => {
     setLoading(true);
@@ -96,16 +96,16 @@ const AuthProvider = ({ children }) => {
         toast.error("Failed To Sign In");
         toast.error(err.message);
       });
-  }
+  };
 
   const googlePopUp = () => {
     setLoading(true);
     popUpSignIn(googleProvider);
-  }
+  };
   const githubPopUp = () => {
     setLoading(true);
     popUpSignIn(githubProvider);
-  }
+  };
 
   return (
     <AuthContex.Provider

@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import animation from "../assets/animations/sign-up.json";
 
 const SignUp = () => {
   const { signUp } = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
+  const { state } = useLocation();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +38,7 @@ const SignUp = () => {
           <Player
             autoplay
             loop
-            src="/sign-up.json"
+            src={animation}
             style={{ height: "300px", width: "300px" }}
           ></Player>
         </div>
@@ -79,7 +82,11 @@ const SignUp = () => {
                 className="input input-bordered"
                 required
               />
-              {errorMessage && <p className="text-sm mt-2 text-center text-red-800">{errorMessage}</p>}
+              {errorMessage && (
+                <p className="text-sm mt-2 text-center text-red-800">
+                  {errorMessage}
+                </p>
+              )}
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Sign Up</button>
@@ -87,7 +94,7 @@ const SignUp = () => {
           </form>
           <p className="text-center">
             Already have a account,{" "}
-            <Link className="text-blue-500" to="/sign-in">
+            <Link className="text-blue-500" to="/sign-in" state={state}>
               Sign In!
             </Link>
           </p>
