@@ -22,7 +22,7 @@ console.log(greetign);
 
 <i>Write your explanation here</i>
 
-Answer: A: {}, because here in the 2nd line a variable named greeting is created and assigned an empty object without any var, let, const keyword. Such variables have a global scope and called a global variable.
+Answer: A: `{}`, because here in the 2nd line a variable named greeting is created and assigned an empty object without any var, let, const keyword. Such variables have a global scope and called a global variable.
 </p>
 </details>
 
@@ -48,6 +48,7 @@ sum(1, "2");
 
 <i>Write your explanation here</i>
 
+Answer: C: `"12"`, javascript is a dynamic typed programming language, here inside sum function one integer and one string type data are given to the plus operator and because of the type difference javascript by default convert the integer variable to sting type variable and for the plus operator this 2 string are concatenated to one string.
 </p>
 </details>
 
@@ -74,6 +75,7 @@ console.log(food);
 
 <i>Write your explanation here</i>
 
+Answer: A: `['🍕', '🍫', '🥑', '🍔']`, here the array called food is naver changed.
 </p>
 </details>
 
@@ -99,6 +101,7 @@ console.log(sayHi());
 
 <i>Write your explanation here</i>
 
+Answer: B: `Hi there, undefined`, at the time of calling the function sayHi() no parameter were passed, thus the parameters by default get the value undefined.
 </p>
 </details>
 
@@ -127,5 +130,6 @@ console.log(count);
 
 <i>Write your explanation here</i>
 
+Answer: C: `3`, here there is 4 elements in the array named nums. When forEach loop is called on nums array it means for every elements of the nums array the loop body will run once. Now, initially a variable named count is assigned with zero and in each loop run the count is incremented by one if num value is truthy. Here, in the nums array only the 1st value is falsy that means the count variable will increment by 3 at the end of the loop.
 </p>
 </details>
