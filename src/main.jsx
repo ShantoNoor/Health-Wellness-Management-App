@@ -7,6 +7,7 @@ import { lazy } from "react";
 import AuthProvider from "./components/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PrivateRoute from "./components/PrivateRoute";
 
 const SignIn = lazy(() => import("./pages/SignIn"));
 const SignUp = lazy(() => import("./pages/SignUp"));
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details />,
+        element: (
+          <PrivateRoute>
+            <Details />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/sign-up",
@@ -47,15 +52,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-activity",
-        element: <Activity />,
+        element: (
+          <PrivateRoute>
+            <Activity />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-profile",
-        element: <MyProfile />,
+        element: (
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact-us",
-        element: <ContanctUs />,
+        element: (
+          <PrivateRoute>
+            <ContanctUs />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about-us",
