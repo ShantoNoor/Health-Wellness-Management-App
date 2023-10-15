@@ -3,7 +3,6 @@ import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
 import animation from "../assets/animations/sign-in.json";
-import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 
 const SignIn = () => {
@@ -25,11 +24,11 @@ const SignIn = () => {
     };
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     signIn(e.target.email.value, e.target.password.value)
-      .then((userCredential) => {
-        toast.success("Sign In Successfull!");
+      .then(() => {
         if (state?.pathname) {
           navigate(state.pathname, {
             state: { title: state.title },
@@ -38,10 +37,6 @@ const SignIn = () => {
           navigate("/");
         }
       })
-      .catch((err) => {
-        toast.error("Failed To Sign In");
-        toast.error(err.message);
-      });
   };
   return (
     <div data-aos="fade-up" className="hero bg-base-200 mt-6">
@@ -88,7 +83,6 @@ const SignIn = () => {
             </div>
           </form>
           <p className="text-center">
-            Don't have a account,{" "}
             <Link className="text-blue-500" to="/sign-up">
               Sign Up!
             </Link>

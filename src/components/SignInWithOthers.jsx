@@ -1,31 +1,28 @@
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 const SignInWithOthers = () => {
   const { googlePopUp, githubPopUp } = useAuth();
   const { state } = useLocation();
   const navigate = useNavigate();
+
+  const redirectAfterLogin = () => {
+    if (state?.pathname) {
+      return navigate(state.pathname, {
+        state: { title: state.title },
+      });
+    } else {
+      return navigate("/");
+    }
+  };
+
   return (
     <ul className="menu rounded-box bg-white">
       <li className="bg-transparent">
         <button
           onClick={() => {
             googlePopUp()
-              .then((res) => {
-                toast.success("Sign In Successfull!");
-                if (state?.pathname) {
-                  return navigate(state.pathname, {
-                    state: { title: state.title },
-                  });
-                } else {
-                  return navigate("/");
-                }
-              })
-              .catch((err) => {
-                toast.error("Failed To Sign In");
-                toast.error(err.message);
-              });
+              .then(() => redirectAfterLogin())
           }}
         >
           <FaGoogle />
@@ -37,20 +34,7 @@ const SignInWithOthers = () => {
         <button
           onClick={() => {
             githubPopUp()
-              .then((res) => {
-                toast.success("Sign In Successfull!");
-                if (state?.pathname) {
-                  return navigate(state.pathname, {
-                    state: { title: state.title },
-                  });
-                } else {
-                  return navigate("/");
-                }
-              })
-              .catch((err) => {
-                toast.error("Failed To Sign In");
-                toast.error(err.message);
-              });
+              .then(() => redirectAfterLogin())
           }}
         >
           <FaGithub />

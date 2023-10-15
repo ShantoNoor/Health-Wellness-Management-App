@@ -1,15 +1,13 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
-import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import animation from "../assets/animations/sign-up.json";
 
 const SignUp = () => {
   const { signUp, updateProfile } = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
-  const { state } = useLocation();
   const navigate = useNavigate();
 
   const [swidth, setSwidth] = useState(500);
@@ -43,21 +41,11 @@ const SignUp = () => {
     }
 
     signUp(e.target.name.value, e.target.email.value, password)
-      .then((userCredential) => {
-        toast.success("Sign Up Successfull!");
-        updateProfile(e.target.name.value, "");
-        navigate("/");
-      })
-      .catch((err) => {
-        toast.error("Failed To Sign Up");
-        toast.error(err.message);
-      });
+      .then(() => updateProfile(e.target.name.value, ""))
+      .then(() => navigate("/"))
   };
   return (
-    <div
-      data-aos="fade-down"
-      className="hero bg-base-200 mt-6"
-    >
+    <div data-aos="fade-down" className="hero bg-base-200 mt-6">
       <div className="hero-content p-0 flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-3xl lg:text-5xl font-bold">Sign Up Now!</h1>

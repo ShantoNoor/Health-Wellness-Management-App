@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
-import SignInWithOthers from "../components/SignInWithOthers";
 import { Player } from "@lottiefiles/react-lottie-player";
 import useAuth from "../hooks/useAuth";
-import { toast } from "react-toastify";
 import { useEffect, useRef } from "react";
-import animation from "../assets/animations/update.json"
+import animation from "../assets/animations/update.json";
 
 const MyProfile = () => {
   const { user, updateProfile } = useAuth();
@@ -24,10 +21,7 @@ const MyProfile = () => {
     updateProfile(e.target.name.value, e.target.photourl.value);
   };
   return (
-    <div
-      data-aos="slide-up"
-      className="hero bg-base-200 mt-6"
-    >
+    <div data-aos="slide-up" className="hero bg-base-200 mt-6">
       <div className="hero-content p-0 flex-col gap-6 lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-3xl lg:text-5xl font-bold">My Profile!</h1>

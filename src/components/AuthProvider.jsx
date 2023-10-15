@@ -14,7 +14,7 @@ import {
 import { toast } from "react-toastify";
 
 const auth = getAuth(app);
-export const AuthContex = createContext(null);
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -52,40 +52,72 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateProfile = (name, photoURL) => {
-    _updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photoURL,
-    })
-      .then(() => {
-        toast.success("Profile Update Successfull!");
+    return new Promise((resolve) => {
+      _updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: photoURL,
       })
-      .catch((err) => {
-        toast.error("Failed To Update Profile");
-        toast.error(err.message);
-      });
+        .then(() => {
+          toast.success("Profile Update Successfull!");
+          resolve(true);
+        })
+        .catch((err) => {
+          toast.error("Failed To Update Profile");
+          toast.error(err.message);
+        });
+    });
   };
 
   const signUp = (name, email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return new Promise((resolve) => {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          toast.success("Sign Up Successfull!");
+          resolve(userCredential.user);
+        })
+        .catch((err) => {
+          toast.error("Failed To Sign Up");
+          toast.error(err.message);
+        });
+    });
   };
 
   const signIn = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password);
+    return new Promise((resolve) => {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          toast.success("Sign In Successfull!");
+          resolve(userCredential.user);
+        })
+        .catch((err) => {
+          toast.error("Failed To Sign In");
+          toast.error(err.message);
+        });
+    });
   };
 
-  const googlePopUp = () => {
+  const popUp = (media) => {
     setLoading(true);
-    return popUpSignIn(googleProvider);
+    return new Promise((resolve) => {
+      popUpSignIn(media)
+        .then((res) => {
+          toast.success("Sign In Successfull!");
+          resolve(res.user);
+        })
+        .catch((err) => {
+          toast.error("Failed To Sign In");
+          toast.error(err.message);
+        });
+    });
   };
-  const githubPopUp = () => {
-    setLoading(true);
-    return popUpSignIn(githubProvider);
-  };
+
+  const googlePopUp = () => popUp(googleProvider);
+  const githubPopUp = () => popUp(githubProvider);
 
   return (
-    <AuthContex.Provider
+    <AuthContext.Provider
       value={{
         googlePopUp,
         githubPopUp,
@@ -98,7 +130,7 @@ const AuthProvider = ({ children }) => {
       }}
     >
       {children}
-    </AuthContex.Provider>
+    </AuthContext.Provider>
   );
 };
 
